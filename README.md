@@ -193,19 +193,31 @@ Kibana - для визуализации и анализа логов.
 Настраивается для обеспечения буферизации и повторных попыток в случае сбоев.
 
 <source>
+
   @type forward
+  
   port 24224
+  
   bind 0.0.0.0
+  
 </source>
 
 <match **>
+
   @type elasticsearch
+  
   host elasticsearch-host
+  
   port 9200
+  
   logstash_format true
+  
   buffer_type file
+  
   buffer_path /var/log/fluentd-buffers/
+  
   flush_interval 5s
+  
 </match>
 
 ### Elasticsearch Configuration
@@ -304,19 +316,27 @@ Grafana - для визуализации метрик и настройки п�
 ### Prometheus Configuration:
 
 global:
+
   scrape_interval: 15s
 
 scrape_configs:
-  - job_name: 'node_exporter'
+
+   job_name: 'node_exporter'
+   
     static_configs:
+    
       - targets: ['node-exporter-host:9100']
 
-  - job_name: 'cadvisor'
+   job_name: 'cadvisor'
+   
     static_configs:
+    
       - targets: ['cadvisor-host:8080']
 
-  - job_name: 'my_service'
+   job_name: 'my_service'
+   
     static_configs:
+    
       - targets: ['my-service-host:8080']
 
 ### Node Exporter:
