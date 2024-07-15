@@ -227,6 +227,7 @@ Kibana - для визуализации и анализа логов.
 Настраивается для оптимального хранения и индексации логов.
 
 network.host: 0.0.0.0
+
 discovery.type: single-node
 
 ### Kibana Configuration:
@@ -236,6 +237,7 @@ discovery.type: single-node
 Настраивается для предоставления интерфейса разработчикам для поиска и анализа логов.
 
 server.host: "0.0.0.0"
+
 elasticsearch.hosts: ["http://elasticsearch-host:9200"]
 
 # Заключение
